@@ -13,6 +13,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "js-cookie",
+              "firebase/app",
+              "@firebase/app"
+            ],
             "outputPath": "dist/front-mai",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,9 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/summernote/dist/summernote-lite.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/js-cookie/src/js.cookie.js",
+              "node_modules/summernote/dist/summernote-lite.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b045e2d5-07c0-48ab-a000-6b288c6bbd62"
   }
 }
